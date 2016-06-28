@@ -8,19 +8,20 @@ $(document).ready(function() {
     this.playRound = function(bet, guess) {
       // Initialize new random number between 1 and 10 to guess
       var guessMe = Math.ceil(Math.random() * 10);
+
       // Check answer and update
       switch (guess) {
         case (guessMe + 1 || guessMe - 1):
-          $("div.result-message").text("Close!");
+          $("div.result-message").text("The random number was " + guessMe + ". Close but no cigar (smoking's bad anyway).");
           break;
         case guessMe:
           this.playerBankroll += bet;
-          $("div.result-message").text("Good guess - your new balance is " + this.playerBankroll);
+          $("div.result-message").text("The random number was " + guessMe + ". Good guess - your new balance is " + this.playerBankroll);
           $("span#current-balance").text(this.playerBankroll);
           break;
         default:
           this.playerBankroll -= bet;
-          $("div.result-message").text("Better luck next time... your new balance is " + this.playerBankroll);
+          $("div.result-message").text("The random number was " + guessMe + ". Better luck next time... your new balance is " + this.playerBankroll);
           $("span#current-balance").text(this.playerBankroll);
       }
     }
