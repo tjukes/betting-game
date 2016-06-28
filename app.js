@@ -21,3 +21,12 @@ var bettingGame = {
     }
   }
 };
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("play-round").addEventListener("click", function() {
+    var playerBet = prompt("What's your bet? ($5 - $10)");
+    var playerGuess = prompt("What's your guess? (1-10)");
+    bettingGame.playRound(playerBet, playerGuess);
+  });
+});
