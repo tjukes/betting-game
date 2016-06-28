@@ -13,8 +13,39 @@
     <h4>Fake gambling is great...</h4>
     <hr>
 
-    <div>
-      <button id="play-round">Play round</button>
+    <div class="gameplay">
+      <h3>Your bank balance: <span id="current-balance">100</span></h3>
+
+      <div class="game-info">
+        <div>
+          <label for="bet">Place your bet:</label>
+          <select name="bet">
+            <option value="5">$5</option>
+            <option value="6">$6</option>
+            <option value="7">$7</option>
+            <option value="8">$8</option>
+            <option value="9">$9</option>
+            <option value="10">$10</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="guess">Guess a number between 1 and 10:</label>
+          <input type="number" max="10" name="guess">
+        </div>
+
+        <div>
+          <button id="play-round">Play round</button>
+        </div>
+
+        <div>
+          <button id="new-game">Restart game</button>
+        </div>
+      </div>
+
+      <div class="game-results">
+      </div>
+
     </div>
   </body>
 
