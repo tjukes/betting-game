@@ -34,4 +34,10 @@ $(document).ready(function() {
     newGame.playRound(playerBet, playerGuess);
   });
 
+  $("button#new-game").on("click", function() {
+    newGame = new bettingGame(100);
+    $("span#current-balance").text(newGame.playerBankroll);
+    alert("Your balance has been reset. Fake gamble away.");
+  });
+
 });
