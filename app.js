@@ -11,16 +11,16 @@ $(document).ready(function() {
       // Check answer and update
       switch (guess) {
         case (guessMe + 1 || guessMe - 1):
-          alert("Close!");
+          $("div.result-message").text("Close!");
           break;
         case guessMe:
           this.playerBankroll += bet;
-          alert("Good guess - your new balance is " + this.playerBankroll);
+          $("div.result-message").text("Good guess - your new balance is " + this.playerBankroll);
           $("span#current-balance").text(this.playerBankroll);
           break;
         default:
           this.playerBankroll -= bet;
-          alert("Better luck next time... your new balance is " + this.playerBankroll);
+          $("div.result-message").text("Better luck next time... your new balance is " + this.playerBankroll);
           $("span#current-balance").text(this.playerBankroll);
       }
     }
@@ -37,7 +37,7 @@ $(document).ready(function() {
   $("button#new-game").on("click", function() {
     newGame = new bettingGame(100);
     $("span#current-balance").text(newGame.playerBankroll);
-    alert("Your balance has been reset. Fake gamble away.");
+    $("div.result-message").text("Your balance has been reset. Fake gamble away.");
   });
 
 });
